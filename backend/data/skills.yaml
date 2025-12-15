@@ -1,0 +1,127 @@
+python:
+  aliases: ["python3", "py"]
+  related: ["pandas", "numpy", "pytest"]
+
+django:
+  aliases: ["django rest framework", "drf"]
+  related: ["rest api", "python"]
+
+fastapi:
+  aliases: ["fast api"]
+  related: ["python", "rest api"]
+
+rest api:
+  aliases: ["rest", "restful", "api design", "api development"]
+  related: ["http", "json"]
+
+sql:
+  aliases: ["postgresql", "mysql", "sqlite", "mssql", "t-sql"]
+  related: ["database", "query optimization"]
+
+mongodb:
+  aliases: ["mongo", "mongoose"]
+  related: ["nosql", "database"]
+
+docker:
+  aliases: ["containerization", "containers"]
+  related: ["kubernetes", "devops"]
+
+kubernetes:
+  aliases: ["k8s"]
+  related: ["docker", "devops"]
+
+git:
+  aliases: ["github", "gitlab"]
+  related: ["version control"]
+
+linux:
+  aliases: ["ubuntu", "debian"]
+  related: ["bash", "shell scripting"]
+
+bash:
+  aliases: ["shell", "shell scripting"]
+  related: ["linux"]
+
+ci/cd:
+  aliases: ["ci", "cd", "continuous integration", "continuous deployment"]
+  related: ["github actions", "gitlab ci", "jenkins"]
+
+github actions:
+  aliases: ["gh actions"]
+  related: ["ci/cd"]
+
+aws:
+  aliases: ["amazon web services", "ec2", "s3", "lambda"]
+  related: ["cloud"]
+
+gcp:
+  aliases: ["google cloud", "gke", "bigquery"]
+  related: ["cloud"]
+
+azure:
+  aliases: ["microsoft azure"]
+  related: ["cloud"]
+
+ml:
+  aliases: ["machine learning", "supervised learning", "unsupervised learning"]
+  related: ["scikit-learn", "classification", "regression"]
+
+scikit-learn:
+  aliases: ["sklearn"]
+  related: ["ml"]
+
+deep learning:
+  aliases: ["dl", "neural networks"]
+  related: ["pytorch", "tensorflow"]
+
+pytorch:
+  aliases: ["torch"]
+  related: ["deep learning"]
+
+tensorflow:
+  aliases: ["tf"]
+  related: ["deep learning"]
+
+nlp:
+  aliases: ["natural language processing", "text mining"]
+  related: ["transformers", "tokenization"]
+
+transformers:
+  aliases: ["huggingface", "hf transformers"]
+  related: ["nlp"]
+
+data analysis:
+  aliases: ["data analytics", "analytics", "data mining"]
+  related: ["pandas", "numpy"]
+
+pandas:
+  aliases: []
+  related: ["python", "data analysis"]
+
+numpy:
+  aliases: []
+  related: ["python", "data analysis"]
+
+statistics:
+  aliases: ["statistical analysis"]
+  related: ["data analysis"]
+
+algorithms:
+  aliases: ["data structures", "complexity"]
+  related: ["graphs", "dynamic programming"]
+
+unit testing:
+  aliases: ["testing", "pytest"]
+  related: ["python"]
+
+pytest:
+  aliases: []
+  related: ["unit testing", "python"]
+
+oop:
+  aliases: ["object oriented programming", "object-oriented programming"]
+  related: ["design patterns"]
+
+system design:
+  aliases: ["architecture", "software architecture"]
+  related: ["scalability", "distributed systems"]

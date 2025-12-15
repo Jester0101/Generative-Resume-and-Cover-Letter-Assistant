@@ -1,0 +1,38 @@
+[
+  {
+    "type": "good_bullet",
+    "text": "Built a FastAPI service for scientific document ingestion and extraction, improving throughput by [metric].",
+    "skills_used": ["python", "fastapi", "nlp"],
+    "notes": "Action + scope + outcome placeholder, grounded phrasing."
+  },
+  {
+    "type": "good_bullet",
+    "text": "Designed a MongoDB schema and indexing strategy for 20k+ documents, reducing query latency by [metric].",
+    "skills_used": ["mongodb", "data analysis"],
+    "notes": "Concrete component + measurable effect placeholder."
+  },
+  {
+    "type": "good_bullet",
+    "text": "Implemented a TF-IDF and BM25 hybrid retriever for requirement-to-profile matching, improving retrieval quality by [metric].",
+    "skills_used": ["python", "algorithms"],
+    "notes": "Directly aligned with this project’s IR concept."
+  },
+  {
+    "type": "bad_bullet",
+    "text": "Helped with backend tasks and improved everything significantly.",
+    "skills_used": [],
+    "notes": "Too vague, no evidence, no scope."
+  },
+  {
+    "type": "bad_bullet",
+    "text": "Achieved a 200% performance boost across all systems using Kubernetes and AWS.",
+    "skills_used": ["kubernetes", "aws"],
+    "notes": "Likely hallucination unless explicitly supported by evidence."
+  },
+  {
+    "type": "good_cover_letter_sentence",
+    "text": "Based on my experience building data extraction pipelines and retrieval components, I can contribute to delivering reliable matching and grounded outputs.",
+    "skills_used": ["python", "nlp", "algorithms"],
+    "notes": "Reasonable, grounded, not overly specific."
+  }
+]

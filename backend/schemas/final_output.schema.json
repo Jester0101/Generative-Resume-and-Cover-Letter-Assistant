@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FinalOutput",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["jd", "match_report", "evidence_map", "generation", "validation"],
+  "properties": {
+    "jd": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "match_report": {
+      "$ref": "match_report.schema.json"
+    },
+    "evidence_map": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "generation": {
+      "$ref": "generation.schema.json"
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "warnings"],
+      "properties": {
+        "ok": { "type": "boolean" },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["code", "message", "path"],
+            "properties": {
+              "code": { "type": "string" },
+              "message": { "type": "string" },
+              "path": { "type": "string" }
+            }
+          },
+          "default": []
+        }
+      }
+    }
+  }
+}
