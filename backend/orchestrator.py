@@ -90,6 +90,43 @@ def _extract_company_role(jd_text: str) -> Tuple[str, str]:
     return company, role
 
 
+def _adaptive_weights(cfg: AppConfig) -> tuple[float, float, float]:
+    
+    enabled = {
+        "bm25": bool(cfg.use_bm25),
+        "tfidf": bool(cfg.use_tfidf),
+        "embed": bool(cfg.use_embeddings),
+    }
+
+    
+    wb, wt, we = float(cfg.w_bm25), float(cfg.w_tfidf), float(cfg.w_embed)
+
+    
+    wb = wb if enabled["bm25"] else 0.0
+    wt = wt if enabled["tfidf"] else 0.0
+    we = we if enabled["embed"] else 0.0
+
+    s = wb + wt + we
+
+    
+    if s <= 0.0:
+        return (0.0, 1.0, 0.0)
+
+    return (wb / s, wt / s, we / s)
+
+
+def _adaptive_threshold(cfg: AppConfig, w_bm25: float, w_tfidf: float, w_embed: float) -> float:
+    
+    enabled_count = sum([bool(cfg.use_bm25), bool(cfg.use_tfidf), bool(cfg.use_embeddings)])
+
+    
+    if enabled_count == 1:
+        
+        return min(float(cfg.match_threshold), 0.30)
+
+    return float(cfg.match_threshold)
+
+
 def run_pipeline(
     jd_text: str,
     profile_text: str,
@@ -154,14 +191,18 @@ def run_pipeline(
         embed_index = EmbedIndex.build(chunks, embed_fn=embed_fn, normalize=True)
 
     
+    w_bm25, w_tfidf, w_embed = _adaptive_weights(cfg)
+    match_threshold = _adaptive_threshold(cfg, w_bm25, w_tfidf, w_embed)
+
     ranker = HybridRanker(
-        w_bm25=cfg.w_bm25,
-        w_tfidf=cfg.w_tfidf,
-        w_embed=cfg.w_embed,
-        match_threshold=cfg.match_threshold,
+        w_bm25=w_bm25,
+        w_tfidf=w_tfidf,
+        w_embed=w_embed,
+        match_threshold=match_threshold,
         top_k_chunks=cfg.top_k_chunks,
         score_weight_must=getattr(cfg, "score_weight_must", 0.7),
     )
+
 
     requirements = _requirement_list(jd_struct)
     matches: List[RequirementMatch] = []
