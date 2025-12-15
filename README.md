@@ -142,4 +142,3 @@ Example request body:
 ---
 
 
-* или продолжить с **Next.js фронтом**
