@@ -110,7 +110,9 @@ export function GenerationResults({
                 key={idx}
                 className="rounded-lg border border-border/70 bg-card px-3 py-2"
               >
-                <div className="text-sm font-medium">{bullet.text}</div>
+                <div className="text-sm font-medium break-words">
+                  {bullet.text}
+                </div>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {bullet.skills_used?.map((skill) => (
                     <Badge key={skill} variant="secondary">
@@ -133,8 +135,8 @@ export function GenerationResults({
             <h3 className="text-base font-semibold">Cover letter</h3>
             <Badge variant="secondary">Grounded</Badge>
           </div>
-          <ScrollArea className="max-h-[320px] rounded-lg border border-border/70 bg-card px-3 py-2">
-            <p className="whitespace-pre-wrap text-sm leading-relaxed">
+          <ScrollArea className="h-full rounded-lg border border-border/70 bg-card px-3 py-2">
+            <p className="whitespace-pre-wrap break-words text-sm leading-relaxed">
               {generation.cover_letter.text}
             </p>
             <div className="mt-2 text-xs text-muted-foreground">

@@ -29,7 +29,7 @@ class AppConfig:
     w_embed: float = 0.20
     match_threshold: float = 0.45
     top_k_chunks: int = 5
-
+#   s_tfidf * w_tfidf + s_bm25 * w_bm25 + s_embed * w_embed
     max_bullet_words: int = 28
 
     require_lexical_support: bool = True

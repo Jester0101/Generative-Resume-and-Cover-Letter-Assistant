@@ -56,16 +56,16 @@ export function EvidencePanel({ evidenceMap, isLoading }: EvidencePanelProps) {
   );
 
   return (
-    <Card className="h-full border-border/60 shadow-sm">
-      <CardHeader className="space-y-2">
+    <Card className="flex h-full flex-col border-border/60 shadow-sm overflow-hidden">
+      <CardHeader className="space-y-2 flex-shrink-0">
         <CardTitle>Evidence map</CardTitle>
         <CardDescription>
           How the backend grounded each requirement in your profile chunks.
         </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-3">
-        <ScrollArea className="max-h-[420px] pr-3">
-          <div className="space-y-3">
+      <CardContent className="flex flex-1 flex-col overflow-hidden p-0 min-h-0">
+        <ScrollArea className="flex-1 min-h-0">
+          <div className="space-y-3 px-6 pb-6">
             {entries.map((item, idx) => (
               <div
                 key={`${item.requirement}-${idx}`}
@@ -79,7 +79,7 @@ export function EvidencePanel({ evidenceMap, isLoading }: EvidencePanelProps) {
                     Score: {Number(item.score).toFixed(2)}
                   </Badge>
                 </div>
-                <div className="text-sm font-medium leading-snug">
+                <div className="text-sm font-medium leading-snug break-words">
                   {item.requirement}
                 </div>
                 <div className="space-y-2 pt-1">
@@ -98,7 +98,7 @@ export function EvidencePanel({ evidenceMap, isLoading }: EvidencePanelProps) {
                           {chunk.scores.bm25.toFixed(2)}
                         </span>
                       </div>
-                      <p className="mt-1 line-clamp-3 text-xs leading-snug">
+                      <p className="mt-1 line-clamp-3 break-words text-xs leading-snug">
                         {chunk.text}
                       </p>
                       {chunk.skills_found.length ? (
@@ -121,11 +121,7 @@ export function EvidencePanel({ evidenceMap, isLoading }: EvidencePanelProps) {
             ))}
           </div>
         </ScrollArea>
-        <Separator />
-        <p className="text-xs text-muted-foreground">
-          Evidence is derived from the chunked profile and retrieval scores
-          computed by the backend.
-        </p>
+       
       </CardContent>
     </Card>
   );

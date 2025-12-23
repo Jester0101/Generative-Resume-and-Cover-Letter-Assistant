@@ -83,11 +83,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/60">
       <div className="mx-auto max-w-6xl space-y-6 px-4 py-10 lg:py-12">
         <header className="space-y-3">
-          <div className="flex items-center gap-2">
-            <Badge variant="secondary">Frontend</Badge>
-            <Badge variant="outline">Next.js + shadcn</Badge>
-            <Badge variant="outline">FastAPI backend</Badge>
-          </div>
+          
           <div className="space-y-2">
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
               Resume & Cover Letter Assistant
